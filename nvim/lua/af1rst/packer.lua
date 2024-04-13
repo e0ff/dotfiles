@@ -1,7 +1,7 @@
 -- This file can be loaded by calling `lua require('plugins')` from your init.vim
 
 -- Only required if you have packer configured as `opt`
-vim.cmd.packadd('packer.nvim')
+-- vim.cmd.packadd('packer.nvim')
 
 return require('packer').startup(function(use)
   -- Packer can manage itself
@@ -9,9 +9,11 @@ return require('packer').startup(function(use)
   use { 'nvim-lua/popup.nvim' }
   use { 'nvim-telescope/telescope-media-files.nvim' }
   use { 'nvim-telescope/telescope-symbols.nvim' }
-  use { 'nvim-telescope/telescope-fzf-native.nvim', build='make' }
+  use { 'nvim-telescope/telescope-fzf-native.nvim',
+        run = 'cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build' }
+--  use { 'nvim-telescope/telescope-fzf-native.nvim', build='make' }
   use {
-	  'nvim-telescope/telescope.nvim', tag = '0.1.3',
+	  'nvim-telescope/telescope.nvim', tag = '0.1.6',
 	  -- or                            , branch = '0.1.x',
 	  requires = { {'nvim-lua/plenary.nvim'} }
   }
@@ -100,15 +102,9 @@ return require('packer').startup(function(use)
   }
 
   -- Treesitter
-  use({
-      'nvim-treesitter/nvim-treesitter',
-      run = function()
-          require('nvim-treesitter.install').update({ with_sync = true })
-      end,
-      config = function()
-          require('configs.treesitter')
-      end,
-  })
+  use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+  use("nvim-treesitter/playground")
+  use("nvim-treesitter/nvim-treesitter-context");
 
   use({ 'windwp/nvim-ts-autotag', after = 'nvim-treesitter' })
 

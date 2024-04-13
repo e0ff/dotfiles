@@ -1,5 +1,5 @@
+require("af1rst.packer")
 require("af1rst.remap")
 require("af1rst.set")
 require("af1rst.autocommands")
-require("af1rst.packer")
 --require("af1rst.colorscheme")
