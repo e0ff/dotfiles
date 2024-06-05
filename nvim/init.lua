@@ -1,1 +1,1 @@
-require("af1rst")
+require("main")
