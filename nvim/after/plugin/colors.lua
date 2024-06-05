@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-	color = color or "darkblue"
+	color = color or "gruvbox"
     if vim.env.TERM == "xterm-256color" then
         color = "elflord"
     end

@@ -11,6 +11,10 @@ require('telekasten').setup({
     auto_set_filetype = true,
 
     -- dir names for special notes (absolute path or subdir name)
+    app          = home .. '/' .. 'apps',
+    contact      = home .. '/' .. 'contacts',
+    code         = home .. '/' .. 'code',
+    articles     = home .. '/' .. 'articles',
     notes        = home .. '/' .. 'notes',
     books        = home .. '/' .. 'books',
     movies       = home .. '/' .. 'movies',
@@ -23,7 +27,7 @@ require('telekasten').setup({
     -- image (sub)dir for pasting
     -- dir name (absolute path or subdir name)
     -- or nil if pasted images shouldn't go into a special subdir
-    image_subdir = "img",
+    image_subdir = '',
 
     -- markdown file extension
     extension    = ".md",
@@ -40,8 +44,8 @@ require('telekasten').setup({
     uuid_sep = "-",
 
     -- following a link to a non-existing note will create it
-    follow_creates_nonexisting = true,
-    dailies_create_nonexisting = true,
+    follow_creates_nonexisting  = true,
+    dailies_create_nonexisting  = true,
     weeklies_create_nonexisting = true,
 
     -- skip telescope prompt for goto_today and goto_thisweek
@@ -49,19 +53,23 @@ require('telekasten').setup({
 
     -- template for new notes (new_note, follow_link)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_note = home .. '/' .. 'templates/new_note.md',
+    template_article        = home .. '/' .. 'templates/article.md',
 
     -- template for newly created daily notes (goto_today)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_daily = home .. '/' .. 'templates/daily.md',
+    template_daily          = home .. '/' .. 'templates/daily.md',
 
     -- template for newly created weekly notes (goto_thisweek)
     -- set to `nil` or do not specify if you do not want a template
-    template_new_weekly  = home .. '/' .. 'templates/weekly.md',
-    template_new_books   = home .. '/' .. 'templates/books.md',
-    template_new_movies  = home .. '/' .. 'templates/movies.md',
-    template_new_meetings= home .. '/' .. 'templates/meetings.md',
-    templta_new_education= home .. '/' .. 'templates/education.md',
+    template_app            = home .. '/' .. 'templates/app.md',
+    template_code           = home .. '/' .. 'templates/code.md',
+    template_contact        = home .. '/' .. 'templates/contact.md',
+    template_decision_make  = home .. '/' .. 'templates/decision_making.md',
+    template_weekly         = home .. '/' .. 'templates/weekly.md',
+    template_books          = home .. '/' .. 'templates/books.md',
+    template_movies         = home .. '/' .. 'templates/movies.md',
+    template_meetings       = home .. '/' .. 'templates/meetings.md',
+    templta_education       = home .. '/' .. 'templates/education.md',
 
     -- image link style
     -- wiki:     ![[image name]]
