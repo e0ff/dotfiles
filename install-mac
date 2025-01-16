@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 packages="tmux neovim fzf aerc findutils make gpg go python wezterm"
-cask_packages="emacs"
+cask_packages="emacs ghostty"
 
 if ! command -v brew &> /dev/null
 then

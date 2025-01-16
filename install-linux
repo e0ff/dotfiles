@@ -2,7 +2,7 @@
 
 packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura python3 curl ripgrep"
 debian_packages="${packages} build-essential golang"
-arch_packages="${packages} go gcc make cmake ninja gnome-keyring"
+arch_packages="${packages} go gcc make cmake ninja gnome-keyring ghostty"
 
 mint_setup(){
     echo "Setting up for Linux Mint..."

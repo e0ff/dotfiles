@@ -10,9 +10,11 @@ virtualenv_info(){
 }
 
 set_prompt(){
+    exit_code=$?
+
     PS1="%F{blue}%B%~%b%f"
 
-    if git rev-parse --is-inside-work-tree 2> /dev/null | grep -q 'true' ; then
+    if git rev-parse --is-inside-work-tree 2&> /dev/null | grep -q 'true' ; then
         PS1+=" %{$fg_bold[magenta]%}$(git rev-parse --abbrev-ref HEAD)%{$reset_color%}"
         modified=$(git status --short | grep " M " | wc -l)
         if [ $modified -gt 0 ]; then
@@ -28,7 +30,15 @@ set_prompt(){
         fi
     fi
 
-    PS1+="$(virtualenv_info) ❯ "
+    PS1+="$(virtualenv_info)"
+
+    if [ $exit_code -eq 0 ]; then
+        PS1+="%{$fg_bold[green]%}"
+    else
+        PS1+="%{$fg_bold[red]%}"
+    fi
+
+    PS1+=" ->%{$reset_color%} "
 }
 
 typeset -a precmd_functions

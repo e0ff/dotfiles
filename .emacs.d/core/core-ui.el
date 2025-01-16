@@ -1,8 +1,8 @@
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (cond
- ((find-font (font-spec :name "Iosevka"))
-  (add-to-list 'default-frame-alist '(font . "Iosevka-14")))
+ ((find-font (font-spec :name "Jetbrains Mono"))
+  (add-to-list 'default-frame-alist '(font . "Jetbrains Mono-14")))
  ((find-font (font-spec :name "Monaco"))
   (add-to-list 'default-frame-alist '(font . "Monaco-14")))
  ((find-font (font-spec :name "Consolas"))
