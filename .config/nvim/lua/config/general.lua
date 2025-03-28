@@ -7,6 +7,7 @@ vim.opt.undofile = true
 vim.opt.formatoptions:remove('t')
 vim.opt.updatetime = 500
 vim.opt.winborder = 'rounded'
+vim.opt.inccommand = 'nosplit'
 
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'

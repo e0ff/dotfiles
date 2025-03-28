@@ -10,7 +10,6 @@ return {
         end
     },
 
-    'markonm/traces.vim',
     'justinmk/vim-sneak',
     'vimlab/split-term.vim',
     'tpope/vim-rsi',
