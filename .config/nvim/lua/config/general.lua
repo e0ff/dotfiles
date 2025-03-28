@@ -6,6 +6,7 @@ vim.opt.mouse = 'a'
 vim.opt.undofile = true
 vim.opt.formatoptions:remove('t')
 vim.opt.updatetime = 500
+vim.opt.winborder = 'rounded'
 
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
@@ -26,7 +27,6 @@ vim.opt.splitright = true
 vim.opt.splitbelow = true
 
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
-vim.env.NVIM_TUI_ENABLE_CURSOR_SHAPE = 1
 
 vim.cmd([[
     function! SynGroup()
@@ -75,6 +75,12 @@ vim.cmd([[
     cnoreabbrev Qa qa
 ]])
 
+-- terminal
+
+vim.cmd([[ autocmd TermOpen term://* startinsert ]])
+
+-- other
+
 vim.cmd([[
     au BufReadPost * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
     augroup filetype_detect_on_rename
@@ -82,21 +88,3 @@ vim.cmd([[
         autocmd BufFilePost * filetype detect
     augroup END
 ]])
-
--- terminal
-
-vim.cmd([[
-    autocmd TermOpen * if &buftype == 'terminal' | call TerminalCommands() | endif
-    autocmd TermOpen term://* startinsert
-    function TerminalCommands()
-        setlocal nonumber
-        setlocal norelativenumber
-        setlocal signcolumn=no
-    endfunction
-]])
-
--- other
-
-vim.diagnostic.config({
-    virtual_text = false
-})
