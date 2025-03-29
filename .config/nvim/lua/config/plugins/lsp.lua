@@ -1,14 +1,10 @@
 return {
     {
-        'VonHeikemen/lsp-zero.nvim',
-        branch = "v4.x",
+        'neovim/nvim-lspconfig',
         dependencies = {
-            -- LSP Support
-            { 'neovim/nvim-lspconfig' },
             { 'williamboman/mason.nvim' },
             { 'williamboman/mason-lspconfig.nvim' },
 
-            -- Autocompletion
             { 'hrsh7th/nvim-cmp' },
             { 'hrsh7th/cmp-buffer' },
             { 'hrsh7th/cmp-path' },
@@ -16,13 +12,10 @@ return {
             { 'hrsh7th/cmp-nvim-lsp' },
             { 'hrsh7th/cmp-nvim-lua' },
 
-            -- Snippets
             { 'L3MON4D3/LuaSnip' },
             { 'rafamadriz/friendly-snippets' },
         },
         config = function()
-            local lsp_zero = require('lsp-zero')
-
             local buffer_autoformat = function(bufnr)
                 local group = 'lsp_autoformat'
                 vim.api.nvim_create_augroup(group, {clear = false})
@@ -50,13 +43,12 @@ return {
                         buffer_autoformat(event.buf)
                     end
 
-                    lsp_zero.default_keymaps({ buffer = event.buf })
-
                     vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
                 end,
             })
 
-            local lspconfig_defaults = require('lspconfig').util.default_config
+            local lspconfig = require('lspconfig')
+            local lspconfig_defaults = lspconfig.util.default_config
             lspconfig_defaults.capabilities = vim.tbl_deep_extend(
                 'force',
                 lspconfig_defaults.capabilities,
@@ -68,13 +60,12 @@ return {
                 ensure_installed = {},
                 handlers = {
                     function(server_name)
-                        require('lspconfig')[server_name].setup({})
+                        lspconfig[server_name].setup({})
                     end,
                 }
             })
 
             local cmp = require('cmp')
-            local cmp_format = lsp_zero.cmp_format()
             local luasnip = require('luasnip')
 
             local has_words_before = function()
@@ -91,7 +82,6 @@ return {
                     { name = 'nvim_lua' },
                     { name = 'buffer', keyword_length = 3 },
                 },
-                formatting = cmp_format,
                 mapping = cmp.mapping.preset.insert({
                     ["<Tab>"] = cmp.mapping(function(fallback)
                         if cmp.visible() then
