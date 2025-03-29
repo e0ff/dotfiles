@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-packages="tmux neovim fzf aerc findutils make gpg go python wezterm"
+packages="tmux neovim fzf aerc findutils make gpg go python"
 cask_packages="emacs ghostty"
 
 if ! command -v brew &> /dev/null

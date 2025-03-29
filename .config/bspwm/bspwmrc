@@ -1,52 +1,60 @@
 #!/bin/bash
 
-[[ ! $(pidof -x sxhkd) ]] && sxhkd &
-[[ ! $(pidof -x picom) ]] && picom &
-[[ ! $(pidof -x dunst) ]] && dunst &
-[[ ! $(pidof -x xautolock) ]] && xautolock -time 10 -locker slock &
-
 padding=5
 monocle_padding=-$padding
 unfocused=#3A2F3F
-focused=#0066ff
-urgent=#ff0000
+focused=#9a52ba
+urgent=#cf2727
 
-bspc monitor HDMI-0 -d main dev games
-bspc monitor HDMI-1 -d chat docs media misc
+num_monitors=$(xrandr --listmonitors | grep Monitors | awk '{print $2}')
 
-bspc config normal_border_color	$unfocused
-bspc config active_border_color $unfocused
+if [[ "$num_monitors" = 3 ]]; then
+    bspc monitor HDMI-0 -d main mail games
+    bspc monitor HDMI-1 -d chat misc
+else
+    bspc monitor -d main dev games chat misc
+fi
+
+bspc config normal_border_color	 $unfocused
+bspc config active_border_color  $unfocused
 bspc config focused_border_color $focused
-bspc config urgent_border_color $urgent
+bspc config urgent_border_color  $urgent
 
 bspc config border_width 3
 bspc config window_gap   10
 
 for side in top right right bottom left; do
-	bspc config ${side}_padding $padding
+    bspc config ${side}_padding $padding
 done
 
 for side in top right right bottom left; do
-	bspc config ${side}_monocle_padding $monocle_padding
+    bspc config ${side}_monocle_padding $monocle_padding
 done
 
-bspc config split_ratio           0.5
-bspc config borderless_monocle    true
-bspc config gapless_monocle       true
-bspc config paddingless_monocle   true
-bspc config focus_follows_pointer false
+bspc config split_ratio              0.5
+bspc config borderless_monocle       true
+bspc config gapless_monocle          true
+bspc config paddingless_monocle      true
+bspc config focus_follows_pointer    false
+bspc config pointer_follows_monitors true
 
-bspc rule -a firefox desktop=web
 bspc rule -a utox desktop=chat follow=off
+bspc rule -a zulip desktop=chat follow=off
 bspc rule -a discord desktop=chat follow=off
 bspc rule -a Gimp state=floating follow=on
 bspc rule -a mpv state=floating
 bspc rule -a Screenkey manage=off
-bspc rule -a Emacs desktop=code state=tiled follow=on
 bspc rule -a Lxappearance state=floating
 bspc rule -a Zathura state=tiled
-bspc rule -a Alacritty:pulsemixer state=floating
-bspc rule -a Alacritty:ncmpcpp desktop=media
-bspc rule -a Keybase desktop=chat
+
+[[ ! $(pidof -x picom) ]] && picom &
+[[ ! $(pidof -x dunst) ]] && dunst &
+[[ ! $(pidof -x xautolock) ]] && xautolock -time 10 -locker slock &
+
+if [[ ! -f /tmp/bspwm_autostart ]]; then
+    sxhkd -c ~/.config/sxhkd/bspwm &
+
+    touch /tmp/bspwm_autostart
+fi
 
 . ~/.config/bspwm/polybar_launch.sh
