@@ -3,29 +3,26 @@
     email = dev@jhert.com
     signingkey = 0EBB61F9450E29D1
 [alias]
+    s = status
     st = status
+    sw = switch
     br = branch
     ls = ls-files
-    ch = checkout
-    g = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(dim green)(%cr)%C(reset) -- %C(white)%s'
-    graph = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(green)(%cr)%C(reset)%n  %C(white)%s %C(bold black)--%an%C(reset) %C(red)%G?%C(reset)%w(0,6,6)%+b'
+    co = checkout
+    graph = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(green)(%cr)%C(reset)%n %C(white)%s %C(bold white)-- %an%C(reset) %C(reset)%w(0,6,6)%+b'
     ds = diff --stat
-[color]
-    diff = auto
-    status = auto
-    branch = auto
-[push]
-    default = simple
+    fixup = commit --ammend --no-edit
+    ammend = commit --ammend
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
-[gui]
-    editor = nvim
+[init]
+	defaultBranch = master
+[push]
+    default = current
+[pull]
+    rebase = false
 [commit]
     gpgSign = true
 [url "git@github.com:"]
     insteadOf = https://github.com/
-[pull]
-    rebase = false
-[init]
-	defaultBranch = master
