@@ -6,8 +6,6 @@ vim.opt.mouse = 'a'
 vim.opt.undofile = true
 vim.opt.formatoptions:remove('t')
 vim.opt.updatetime = 500
-vim.opt.winborder = 'rounded'
-vim.opt.inccommand = 'nosplit'
 
 vim.opt.encoding = 'utf-8'
 vim.opt.fileencoding = 'utf-8'
@@ -26,15 +24,9 @@ vim.opt.title = true
 vim.opt.signcolumn = "yes"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
+vim.opt.winborder = 'rounded'
 
 vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
-
-vim.cmd([[
-    function! SynGroup()
-        let l:s = synID(line('.'), col('.'), 1)
-        echo synIDattr(l:s, 'name') . ' -> ' . synIDattr(synIDtrans(l:s), 'name')
-    endfun
-]])
 
 -- text editing
 
@@ -60,6 +52,7 @@ vim.opt.wildignore = {
 
 vim.opt.ignorecase = true
 vim.opt.showmatch = true
+vim.opt.inccommand = 'nosplit'
 
 -- abbreviations
 

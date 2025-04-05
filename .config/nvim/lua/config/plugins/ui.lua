@@ -3,10 +3,11 @@ return {
         'nvim-lualine/lualine.nvim',
         config = function()
             local lualine = require('lualine')
+            local kanagawa_paper = require("lualine.themes.kanagawa-paper-ink")
 
             lualine.setup({
                 options = {
-                    theme = "catppuccin",
+                    theme = kanagawa_paper,
                     icons_enabled = false,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
@@ -43,64 +44,18 @@ return {
     'nvim-tree/nvim-web-devicons',
 
     {
-        "catppuccin/nvim",
-        as = "catppuccin",
+        "thesimonho/kanagawa-paper.nvim",
         config = function()
-            require("catppuccin").setup({
-                flavour = "mocha", -- latte, frappe, macchiato, mocha
-                background = {
-                    light = "latte",
-                    dark = "mocha",
-                },
-                transparent_background = false,
-                show_end_of_buffer = true,
-                term_colors = true,
-                dim_inactive = {
-                    enabled = false,
-                },
+            require("kanagawa-paper").setup({
                 styles = {
-                    comments = { "italic" },
-                    conditionals = { "italic" },
-                    loops = { "italic" },
-                    functions = {},
-                    keywords = {},
-                    strings = {},
-                    variables = {},
-                    numbers = {},
-                    booleans = {},
-                    properties = {},
-                    types = { "bold" },
-                    operators = {},
+                    type = { bold = true }
                 },
-                color_overrides = {
-                    mocha = {
-                        base = "#050505",
-                        mantle = "#050505",
-                        crust = "#050505",
-                    },
-                },
-                custom_highlights = function(colors)
-                    return {
-                        VertSplit = { fg = colors.overlay0 },
-                        WinSeparator = { fg = colors.overlay0 },
-                    }
-                end,
-                integrations = {
-                    cmp = true,
-                    gitsigns = true,
-                    treesitter = true,
-                    indent_blankline = {
-                        enabled = true,
-                        scope_color = "",
-                        colored_indent_levels = false,
-                    },
-                    lsp_trouble = true,
-                    harpoon = true,
+                color_balance = {
+                    ink = { brightness = 0.2, saturation = 0.4 },
+                    canvas = { brightness = 0, saturation = 0 },
                 },
             })
-
-            -- setup must be called before loading
-            vim.cmd.colorscheme "catppuccin"
+            vim.cmd.colorscheme("kanagawa-paper")
         end
     },
 
