@@ -11,8 +11,8 @@
     co = checkout
     graph = log --all --color --graph --pretty=format:'%C(auto)%h%C(auto)%d%C(reset) %C(green)(%cr)%C(reset)%n %C(white)%s %C(bold white)-- %an%C(reset) %C(reset)%w(0,6,6)%+b'
     ds = diff --stat
-    fixup = commit --ammend --no-edit
-    ammend = commit --ammend
+    fixup = commit --amend --no-edit
+    amend = commit --amend
 [core]
     editor = nvim
     excludesfile = ~/.gitignore_global
