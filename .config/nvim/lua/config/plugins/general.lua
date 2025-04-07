@@ -10,9 +10,7 @@ return {
         end
     },
 
-    'justinmk/vim-sneak',
     'vimlab/split-term.vim',
-    'tpope/vim-rsi',
 
     {
         'ibhagwan/fzf-lua',
@@ -28,6 +26,13 @@ return {
                     }
                 }
             })
+        end
+    },
+
+    {
+        'mbbill/undotree',
+        config = function()
+            vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
         end
     },
 }
