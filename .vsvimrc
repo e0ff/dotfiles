@@ -1,0 +1,23 @@
+set backspace=indent,eol,start
+set hlsearch
+set incsearch
+set expandtab
+set autoindent
+set tabstop=4
+set shiftwidth=4
+
+nnoremap <space>l :noh<cr>
+
+nnoremap <space><space> :vsc Edit.NavigateTo<cr>
+
+nnoremap <space>gg :vsc Team.Git.GoToChanges<cr>
+nnoremap <space>gb :vsc Team.Git.Annotate<cr>
+nnoremap <space>gr :vsc Team.Git.ShowBranches<cr>
+nnoremap <space>gd :vsc Team.Git.CompareWithUnmodifed<cr>
+nnoremap <space>gl :vsc Team.Git.ViewBranchHistory<cr>
+
+nnoremap <space>y "+y
+vnoremap <space>y "+y
+
+nnoremap <space>p "0p
+vnoremap <space>p "0P
