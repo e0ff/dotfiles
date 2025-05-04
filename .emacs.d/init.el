@@ -1,5 +1,5 @@
-(when (version< emacs-version "26.1")
-  (error (concat "This config requires Emacs 26.1+. Current version: " emacs-version)))
+(when (version< emacs-version "30.1")
+  (error (concat "This config requires Emacs 30.1+. Current version: " emacs-version)))
 
 (require 'package)
 
@@ -27,6 +27,7 @@
 (setq straight-use-package-by-default t)
 (straight-use-package 'use-package)
 (straight-use-package 'diminish)
+(straight-use-package 'project)
 
 (add-to-list 'load-path (concat user-emacs-directory "core/"))
 (add-to-list 'load-path (concat user-emacs-directory "themes/"))

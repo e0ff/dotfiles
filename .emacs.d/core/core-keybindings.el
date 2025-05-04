@@ -34,7 +34,7 @@
    "b" '(:ignore t :which-key "buffers")
    "bb" 'switch-to-buffer
    "bB" 'ibuffer-other-window
-   "bk" 'kill-this-buffer
+   "bk" 'kill-current-buffer
    "bK" 'kill-buffer
    "br" 'revert-buffer
 
