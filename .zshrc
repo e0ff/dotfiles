@@ -16,7 +16,7 @@ setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_FIND_NO_DUPS
 
-HISTFILE=~/.histfile
+HISTFILE=~/.cache/zsh_history
 HISTSIZE=5000
 SAVEHIST=$HISTSIZE
 
@@ -27,7 +27,6 @@ zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"
 zplug "hlissner/zsh-autopair", defer:2
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-zplug "softmoth/zsh-vim-mode"
 
 typeset -A ZSH_HIGHLIGHT_STYLES
 ZSH_HIGHLIGHT_STYLES[path]='none'
@@ -55,5 +54,3 @@ setopt interactivecomments
 setopt no_beep
 
 unsetopt autocd
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

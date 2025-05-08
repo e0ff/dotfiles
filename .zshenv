@@ -24,7 +24,6 @@ export BROWSER="firefox"
 export TERMINAL="ghostty"
 
 export ASAN_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer"
-export XBPS_DISTDIR="$HOME/.void-packages"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/:/usr/local/lib64/pkgconfig"
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
@@ -35,22 +34,25 @@ export LESS_TERMCAP_so=$'\E[38;5;246m'
 export LESS_TERMCAP_ue=$'\E[0m'
 export LESS_TERMCAP_us=$'\E[04;38;5;146m'
 
-export ANDROID_HOME="$HOME/Android/Sdk"
+export ANDROID_HOME="$HOME/.local/share/android/sdk"
 export ANDROID_SDK_ROOT=$ANDROID_HOME
 
 export GOPROXY="direct"
 export GO11MODULE="auto"
 
 if type go &> /dev/null; then
-    export GOPATH=$(go env GOPATH)
+    export GOPATH="$HOME/.local/share/go"
+    export GOMODCACHE="$HOME/.cache/go/mod"
     export PATH="$PATH:$GOPATH/bin"
 fi
 
 export XDG_DATA_DIRS="/usr/share/:/usr/local/share/:$HOME/.local/share/flatpak/exports/share/:/var/lib/flatpak/exports/share"
 
-export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
 export FZF_DEFAULT_OPTS="--layout reverse --preview-window :hidden"
+if type fd &> /dev/null; then
+    export FZF_DEFAULT_COMMAND='fd --type f --strip-cwd-prefix'
+fi
 
-if [[ -f .secrets ]]; then
-    . ~/.secrets
+if [[ -f ~/.config/secrets ]]; then
+    . ~/.config/secrets
 fi
