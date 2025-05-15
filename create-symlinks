@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 dotfiles=(".zshrc" ".bashrc" ".Xresources" ".gitconfig" "bin" ".zsh" ".zshenv" ".xprofile" ".bash_profile" ".pylintrc" ".gitignore_global" ".Xresources.d" ".xinitrc" ".profile" ".zprofile" ".mailcap" ".emacs.d" ".vimrc" ".psqlrc")
-configs=("user-dirs.dirs" "rofi" "bspwm" "sxhkd" "aliases" "gtk-3.0" "gtk-2.0" "aerc" "mpd" "nvim" "tmux" "ideavim" "wezterm" "ghostty")
+configs=("user-dirs.dirs" "rofi" "bspwm" "sxhkd" "aliases" "gtk-3.0" "gtk-2.0" "aerc" "mpd" "nvim" "tmux" "ideavim" "ghostty")
 PWD=$(pwd)
 backup_dir="$HOME/old_dotfiles"
 
