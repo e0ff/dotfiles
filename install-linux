@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura python3 curl ripgrep"
+packages="zsh tmux emacs neovim firefox mpv sxiv virt-manager mpd sxhkd feh cinnamon fzf aerc xclip weechat unzip zathura python3 curl ripgrep fd ttf-jetbrains-mono"
 debian_packages="${packages} build-essential golang"
 arch_packages="${packages} go gcc make cmake ninja gnome-keyring ghostty"
 
@@ -30,7 +30,7 @@ archlinux_setup() {
 
     sudo pacman -Syu
 
-    sudo pacman -S $arch_packages
+    sudo pacman -S --needed $arch_packages
 
     systemctl enable --user gcr-ssh-agent.socket
 }
