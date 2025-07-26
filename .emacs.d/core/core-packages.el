@@ -147,7 +147,6 @@
 
   (setq company-backends
         '((company-files
-           company-elisp
            company-cmake
            company-keywords
            company-capf

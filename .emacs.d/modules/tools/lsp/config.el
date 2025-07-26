@@ -1,3 +1,5 @@
+;;; tools/lsp/config.el -*- lexical-binding: t; -*-
+
 (use-package eglot
   :config
   (setq eglot-autoshutdown t)

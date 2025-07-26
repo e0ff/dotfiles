@@ -1,3 +1,5 @@
+;;; tools/docker/config.el -*- lexical-binding: t; -*-
+
 (use-package docker
   :ensure
   :general
@@ -7,5 +9,3 @@
 
 (use-package dockerfile-mode
   :ensure)
-
-(provide 'mod-docker)

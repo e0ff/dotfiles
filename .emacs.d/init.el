@@ -6,9 +6,6 @@
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
-(when (version< emacs-version "27")
-  (package-initialize))
-
 (defvar bootstrap-version)
 (let ((bootstrap-file
       (expand-file-name "straight/repos/straight.el/bootstrap.el" user-emacs-directory))

@@ -1,3 +1,5 @@
+;;; tools/git/config.el -*- lexical-binding: t; -*-
+
 (setq version-control t
       vc-follow-symlinks t)
 
@@ -22,11 +24,10 @@
     "gb" 'magit-blame
     "gl" 'magit-log
     "gr" 'magit-branch
-    "gS" 'magit-stage-file))
+    "gS" 'magit-stage-file
+    "g/" 'counsel-git-grep))
 
 (use-package forge)
 
 (use-package git-modes
   :ensure)
-
-(provide 'mod-git)

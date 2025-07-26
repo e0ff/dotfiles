@@ -1,4 +1,4 @@
-;;; tools/dape/config.el -*- lexical-binding: t; -*-
+;;; tools/dap/config.el -*- lexical-binding: t; -*-
 
 (use-package dape
   :general

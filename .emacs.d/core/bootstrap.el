@@ -30,7 +30,8 @@
       default-directory (getenv "HOME")
       make-pointer-invisible t
       whitespace-style (quote (face spaces tabs newline space-mark tab-mark newline-mark))
-      display-line-numbers-type 'relative)
+      display-line-numbers-type 'relative
+      display-line-numbers-width-start t)
 
 (setq-default truncate-lines 1
               backward-delete-function nil
@@ -68,7 +69,9 @@
       backup-directory-alist             '((".*" . "~/.emacs.d/etc/cache/backups"))
       request-storage-directory          (concat core/etc-dir "request")
       save-place-file                    (concat core/cache-dir "places")
-      auto-save-list-file-prefix         (concat core/cache-dir "auto-save-list/.saves-"))
+      auto-save-list-file-prefix         (concat core/cache-dir "auto-save-list/.saves-")
+      project-list-file                  (concat core/cache-dir "projects")
+      bookmark-default-file              (concat core/private-dir "bookmarks"))
 
 (setq revert-without-query '(".*"))
 

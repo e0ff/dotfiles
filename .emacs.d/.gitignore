@@ -3,18 +3,13 @@ elpa
 straight
 tramp
 .python-environments
-abbrev_defs
 transient
 anaconda-mode
 multisession
 tutorial
 tree-sitter/*
 !tree-sitter/.gitkeep
-tree-sit-parsers
-tree-sit-repos
 eln-cache
-
-.local
 
 etc/cache
 etc/private
@@ -38,5 +33,3 @@ mu4e-config.el
 projectile-bookmarks.eld
 network-security.data
 forge-database*.sqlite
-
-projects

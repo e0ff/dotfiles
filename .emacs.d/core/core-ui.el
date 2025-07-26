@@ -8,20 +8,20 @@
  ((find-font (font-spec :name "Consolas"))
   (add-to-list 'default-frame-alist '(font . "Consolas-14"))))
 
-;; (use-package doom-themes
-;;   :ensure t
-;;   :config
-;;   (setq doom-themes-enable-bold t
-;;         doom-themes-enable-italic t)
-;;   (load-theme 'doom-Iosvkem t)
-;;   (doom-themes-org-config))
+(use-package doom-themes
+  :ensure
+  :config
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t)
+  (load-theme 'doom-palenight t)
+  (doom-themes-org-config))
 
-(require 'undistinguished-theme)
-(require 'undistinguished-light-theme)
-(load-theme 'undistinguished t)
+;; (require 'undistinguished-theme)
+;; (require 'undistinguished-light-theme)
+;; (load-theme 'undistinguished t)
 
 (use-package doom-modeline
-  :ensure t
+  :ensure
   :init
   (setq doom-modeline-modal-icon nil)
   (setq doom-modeline-major-mode-icon nil)
