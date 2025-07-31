@@ -60,14 +60,14 @@
    "om" 'mu4e
 
    "p" '(:ignore :which-key "projects")
-   "pp" 'project-find-file
+   "pp" 'project-switch-project
+   "pf" 'project-find-file
+   "pb" 'project-switch-to-buffer
    "pd" 'project-dired
    "pk" 'project-kill-buffers
-   "ps" 'project-switch-project
 
    "t" '(:ignore t :which-key "toggle")
    "tw" 'whitespace-mode
-   "tf" 'display-fill-column-indicator-mode
 
    ;; window management
    "w" '(:ignore t :which-key "windows")
@@ -87,7 +87,6 @@
    "wj" 'windmove-down
    "wk" 'windmove-up
    "wl" 'windmove-right
-
    "w=" 'balance-windows
 
    "/" 'counsel-rg)

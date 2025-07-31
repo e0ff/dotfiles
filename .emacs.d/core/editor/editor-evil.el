@@ -4,6 +4,7 @@
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil) ;; disable for evil-collection
+  (setq evil-want-C-u-scroll t)
   (setq evil-undo-system 'undo-tree)
   :config
   (setq evil-normal-state-cursor '("white" box))
