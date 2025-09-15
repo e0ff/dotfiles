@@ -10,23 +10,21 @@ return {
             { 'hrsh7th/cmp-path' },
             { 'saadparwaiz1/cmp_luasnip' },
             { 'hrsh7th/cmp-nvim-lsp' },
-            { 'hrsh7th/cmp-nvim-lua' },
 
             { 'L3MON4D3/LuaSnip' },
-            { 'rafamadriz/friendly-snippets' },
         },
         config = function()
             local buffer_autoformat = function(bufnr)
                 local group = 'lsp_autoformat'
-                vim.api.nvim_create_augroup(group, {clear = false})
-                vim.api.nvim_clear_autocmds({group = group, buffer = bufnr})
+                vim.api.nvim_create_augroup(group, { clear = false })
+                vim.api.nvim_clear_autocmds({ group = group, buffer = bufnr })
 
                 vim.api.nvim_create_autocmd('BufWritePre', {
                     buffer = bufnr,
                     group = group,
                     desc = 'LSP format on save',
                     callback = function()
-                        vim.lsp.buf.format({async = false, timeout_ms = 10000})
+                        vim.lsp.buf.format({ async = false, timeout_ms = 10000 })
                     end,
                 })
             end
@@ -43,10 +41,13 @@ return {
                         buffer_autoformat(event.buf)
                     end
 
-                    vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
-                    vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
+                    vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>",
+                        { noremap = true, silent = true })
+                    vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>",
+                        { noremap = true, silent = true })
 
-                    vim.api.nvim_command('autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
+                    vim.api.nvim_command(
+                        'autocmd CursorHold <buffer> lua vim.diagnostic.open_float({ focusable = false })')
                 end,
             })
 
@@ -74,16 +75,16 @@ return {
             local has_words_before = function()
                 unpack = unpack or table.unpack
                 local line, col = unpack(vim.api.nvim_win_get_cursor(0))
-                return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+                return col ~= 0 and
+                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
             end
 
             cmp.setup({
                 sources = {
-                    { name = 'path' },
                     { name = 'nvim_lsp' },
                     { name = 'luasnip', keyword_length = 2 },
-                    { name = 'nvim_lua' },
-                    { name = 'buffer', keyword_length = 3 },
+                    { name = 'buffer',  keyword_length = 3 },
+                    { name = 'path' },
                 },
                 mapping = cmp.mapping.preset.insert({
                     ["<Tab>"] = cmp.mapping(function(fallback)

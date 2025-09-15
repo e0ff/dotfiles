@@ -3,11 +3,8 @@ return {
         'nvim-lualine/lualine.nvim',
         config = function()
             local lualine = require('lualine')
-            local kanagawa_paper = require("lualine.themes.kanagawa-paper-ink")
-
             lualine.setup({
                 options = {
-                    theme = kanagawa_paper,
                     icons_enabled = false,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
@@ -44,18 +41,18 @@ return {
     'nvim-tree/nvim-web-devicons',
 
     {
-        "thesimonho/kanagawa-paper.nvim",
+        "vague2k/vague.nvim",
+        lazy = false,
+        priority = 1000,
         config = function()
-            require("kanagawa-paper").setup({
-                styles = {
-                    type = { bold = true }
-                },
-                color_balance = {
-                    ink = { brightness = 0.2, saturation = 0.4 },
-                    canvas = { brightness = 0, saturation = 0 },
-                },
+            require("vague").setup({
+                style = {
+                    strings = "none",
+                    conditionals = "italic",
+                    builtin_types = "none",
+                }
             })
-            vim.cmd.colorscheme("kanagawa-paper")
+            vim.cmd("colorscheme vague")
         end
     },
 

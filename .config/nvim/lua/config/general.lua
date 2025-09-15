@@ -1,8 +1,6 @@
 vim.opt.number = true
 vim.opt.relativenumber = true
-vim.opt.fsync = true
 vim.opt.autochdir = true
-vim.opt.mouse = 'a'
 vim.opt.undofile = true
 vim.opt.formatoptions:remove('t')
 vim.opt.updatetime = 500
@@ -25,8 +23,6 @@ vim.opt.signcolumn = "yes"
 vim.opt.splitright = true
 vim.opt.splitbelow = true
 vim.opt.winborder = 'rounded'
-
-vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
 
 -- text editing
 
@@ -52,7 +48,6 @@ vim.opt.wildignore = {
 
 vim.opt.ignorecase = true
 vim.opt.showmatch = true
-vim.opt.inccommand = 'nosplit'
 
 -- abbreviations
 
