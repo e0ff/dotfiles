@@ -12,15 +12,10 @@
 
 .zsh/private.zsh
 
-.config/qutebrowser/bookmarks
-.config/qutebrowser/qsettings
-
 .config/aerc/accounts.conf
 .config/aerc/signatures
 .config/aerc/filters
 
 .config/gtk-3.0/bookmarks
-
-.doom.d/private.el
 
 private
