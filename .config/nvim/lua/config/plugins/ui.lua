@@ -5,6 +5,7 @@ return {
             local lualine = require('lualine')
             lualine.setup({
                 options = {
+                    theme = 'jellybeans-nvim',
                     icons_enabled = false,
                     component_separators = { left = '', right = '' },
                     section_separators = { left = '', right = '' },
@@ -41,18 +42,12 @@ return {
     'nvim-tree/nvim-web-devicons',
 
     {
-        "vague2k/vague.nvim",
+        "wtfox/jellybeans.nvim",
         lazy = false,
         priority = 1000,
+        opts = {},
         config = function()
-            require("vague").setup({
-                style = {
-                    strings = "none",
-                    conditionals = "italic",
-                    builtin_types = "none",
-                }
-            })
-            vim.cmd("colorscheme vague")
+            vim.cmd [[colorscheme jellybeans-hc]]
         end
     },
 
