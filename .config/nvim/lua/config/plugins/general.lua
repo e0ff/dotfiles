@@ -13,18 +13,13 @@ return {
     'vimlab/split-term.vim',
 
     {
-        'ibhagwan/fzf-lua',
-        branch = 'main',
+        'nvim-mini/mini.pick',
+        version = false,
         config = function()
-            local fzf = require('fzf-lua')
-            fzf.setup({
-                'max-perf',
-                winopts = {
-                    split = 'belowright 15new',
-                    preview = {
-                        hidden = 'hidden'
-                    }
-                }
+            require('mini.pick').setup({
+                options = {
+                    content_from_bottom = true,
+                },
             })
         end
     },

@@ -48,4 +48,20 @@ return {
     },
 
     'HiPhish/rainbow-delimiters.nvim',
+
+    {
+        'stevearc/overseer.nvim',
+        ---@module 'overseer'
+        ---@type overseer.SetupOpts
+        opts = {
+            component_aliases = {
+                default = {
+                    "on_exit_set_status",
+                    "on_complete_notify",
+                    { "on_output_quickfix",  set_diagnostics = true },
+                    { "on_complete_dispose", require_view = { "SUCCESS", "FAILURE" } },
+                },
+            },
+        },
+    },
 }

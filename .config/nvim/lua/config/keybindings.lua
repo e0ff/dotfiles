@@ -10,11 +10,9 @@ local function map(mode, lhs, rhs, opts)
     vim.keymap.set(mode, lhs, rhs, options)
 end
 
-map('n', '<leader><space>', '<cmd>FzfLua commands<cr>', { silent = true })
-
 -- buffers
 
-map('n', '<leader>bb', '<cmd>FzfLua buffers<cr>', { silent = true })
+map('n', '<leader>bb', ':Pick buffers<cr>', { silent = true })
 map('n', '<leader>bk', ':bdelete<cr>')
 map('n', '<leader>br', ':e!<cr>')
 map('n', '<leader>bn', ':bnext<cr>', { silent = true })
@@ -25,20 +23,21 @@ map('n', '<leader>bp', ':bprevious<cr>', { silent = true })
 map('n', '<leader>cf', ':Format<cr>', { silent = true })
 map('n', '<leader>cx', ':Trouble diagnostics toggle focus=false<cr>', { silent = true })
 map('n', '<leader>cd', ':Neogen<cr>')
+map('n', '<leader>cr', ':OverseerRun<cr>')
 
 -- files
 
-map('n', '<leader>ff', '<cmd>FzfLua files<cr>', { silent = true })
-map('n', '<leader>fr', '<cmd>FzfLua oldfiles<cr>', { silent = true })
+map('n', '<leader>ff', ':Pick files<cr>', { silent = true })
 map('n', '<leader>fi', ':e ~/.config/nvim/init.lua<cr>', { silent = true })
 
 -- git
 
 map('n', '<leader>gg', ':Git<cr>')
-map('n', 'gb', ":Git blame<cr>", { silent = true })
+map('n', '<leader>gb', ':Git blame<cr>', { silent = true })
 map('n', '<leader>gr', ':Git branch<cr>')
 map('n', '<leader>gd', ':Git diff<cr>')
 map('n', '<leader>gl', ':Git log<cr>')
+map('n', '<leader>gf', ':Pick files tool=\'git\'<cr>')
 
 -- windows
 
@@ -67,16 +66,17 @@ map('n', '<leader>wx', '<C-w>x')
 -- open
 
 map('n', '<leader>ot', ':15Term<cr>', { silent = true })
+map('n', '<leader>oq', ':copen<cr>', { silent = true })
 
 -- toggle
 
-map('n', '<leader>tf', ':FormatToggle<cr>')
 map('n', '<leader>ts', ':set spell!<cr>')
 map('n', '<leader>tl', ':set list!<cr>')
+map('n', '<leader>to', ':OverseerToggle!<cr>')
 
 -- other
 
-map('n', '<leader>/', '<cmd>FzfLua live_grep<cr>')
+map('n', '<leader>/', ':Pick grep_live<cr>', { silent = true })
 map('n', '<leader>xx', ':source ~/.config/nvim/init.lua<cr>')
 map({ 'n', 'v' }, '<leader>y', '"+y')
 map('n', '<leader>Y', '"+Y')
