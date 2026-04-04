@@ -10,6 +10,7 @@ tutorial
 tree-sitter/*
 !tree-sitter/.gitkeep
 eln-cache
+mason
 
 etc/cache
 etc/private

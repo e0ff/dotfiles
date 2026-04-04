@@ -1,9 +1,5 @@
 ;;; lang/csharp/config.el -*- lexical-binding: t; -*-
 
-(use-package csharp-mode
-  :ensure
-  :mode ("\\.cs\\'" . csharp-mode))
-
 (use-package csproj-mode
   :ensure)
 

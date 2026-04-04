@@ -91,6 +91,7 @@
   :config
   (setq undo-tree-visualizer-timestamps t)
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/cache/undo")))
+  (add-hook 'evil-local-mode-hook 'turn-on-undo-tree-mode)
   (global-undo-tree-mode))
 
 (provide 'editor-evil)
