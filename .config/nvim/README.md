@@ -1,3 +1,0 @@
-# dotneovim
-
-My neovim configuration
