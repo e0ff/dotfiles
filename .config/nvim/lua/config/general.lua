@@ -68,6 +68,10 @@ vim.cmd([[
 
 vim.cmd([[ autocmd TermOpen term://* startinsert ]])
 
+-- builtin plugins
+
+vim.cmd("packadd nvim.undotree")
+
 -- other
 
 vim.cmd([[
