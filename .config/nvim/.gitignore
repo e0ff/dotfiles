@@ -1,8 +1,4 @@
-bundle
-plugin
 spell
 
-autoload/plug.vim
 .netrwhist
-
 *.swp
