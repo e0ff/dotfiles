@@ -9,3 +9,34 @@ vim.api.nvim_create_autocmd('PackChanged', {
 })
 
 vim.pack.add({ 'https://github.com/nvim-treesitter/nvim-treesitter' })
+
+local treesitter = require('nvim-treesitter')
+treesitter.install({
+    'c',
+    'cpp',
+    'lua',
+    'gitcommit',
+    'sql',
+    'python',
+    'go',
+    'gomod',
+    'gosum',
+    'html',
+    'css',
+    'json'
+})
+
+vim.api.nvim_create_autocmd('FileType', {
+    callback = function(ev)
+        local lang = vim.treesitter.language.get_lang(ev.match)
+        local installed = treesitter.get_installed()
+        local is_installed = vim.tbl_contains(installed, lang)
+        if not is_installed then
+            return
+        end
+
+        vim.treesitter.start(ev.buf)
+        vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+    end,
+    desc = "enable treesitter",
+})
