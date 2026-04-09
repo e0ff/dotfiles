@@ -23,7 +23,12 @@ treesitter.install({
     'gosum',
     'html',
     'css',
-    'json'
+    'javascript',
+    'typescript',
+    'json',
+    'rust',
+    'markdown',
+    'typst',
 })
 
 vim.api.nvim_create_autocmd('FileType', {
