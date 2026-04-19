@@ -13,6 +13,11 @@ then
     alias gpg="gpg2"
 fi
 
+if command -v anyzig &> /dev/null
+then
+    alias zig="anyzig"
+fi
+
 alias ls="ls --color=auto"
 alias la="ls -Alh"
 alias ll="ls -lhF"
