@@ -3,7 +3,6 @@
 (setq js-indent-level 2)
 
 (use-package js2-mode
-  :ensure
   :config
   (setq js2-chain-indents t
         js2-basic-offset 2

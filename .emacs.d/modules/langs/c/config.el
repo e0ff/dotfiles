@@ -29,9 +29,7 @@
 (add-hook 'makefile-mode-hook 'my-makefile-hook)
 
 (use-package cmake-mode
-  :ensure
   :mode (("CMakeLists\\.txt\\'" . cmake-mode)
          ("\\.cmake\\'" . cmake-mode)))
 
-(use-package meson-mode
-  :ensure)
+(use-package meson-mode)

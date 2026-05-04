@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (require 'core-variables)
 (require 'core-functions)
 

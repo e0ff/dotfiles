@@ -4,7 +4,6 @@
       vc-follow-symlinks t)
 
 (use-package diff-hl
-  :ensure
   :config
   (global-diff-hl-mode)
 
@@ -14,7 +13,6 @@
   (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
 
 (use-package magit
-  :ensure
   :general
   (leader-def
     :states 'normal
@@ -29,5 +27,4 @@
 
 (use-package forge)
 
-(use-package git-modes
-  :ensure)
+(use-package git-modes)

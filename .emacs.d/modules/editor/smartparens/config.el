@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package smartparens-config
   :straight smartparens
   :config

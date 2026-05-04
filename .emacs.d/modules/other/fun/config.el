@@ -1,8 +1,8 @@
-(use-package zone-nyan
-  :ensure)
+;; -*- lexical-binding: t; -*-
+
+(use-package zone-nyan)
 
 (use-package emojify
-  :ensure
   :config
   (setq emojify-emojis-dir (concat core/cache-dir "emojis"))
   (add-hook 'text-mode-hook 'emojify-mode)

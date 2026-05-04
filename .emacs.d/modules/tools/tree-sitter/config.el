@@ -3,9 +3,8 @@
 (setq treesit-font-lock-level 4)
 
 (use-package treesit-auto
-  :ensure
   :custom
   (treesit-auto-install 'prompt)
   :config
-  (treesit-auto-add-to-auto-mode-alist 'all)
+  (setq treesit-auto-langs '(c cpp gitcommit sql python go gomod html css javascript typescript json rust markdown typst))
   (global-treesit-auto-mode))

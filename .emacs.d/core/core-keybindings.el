@@ -1,8 +1,10 @@
+;; -*- lexical-binding: t; -*-
+
 (defvar core/leader-key "SPC")
 (defvar core/local-leader-key "SPC m")
 
 (use-package which-key
-  :ensure t
+  :ensure nil
   :diminish which-key-mode
   :config
   (setq which-key-allow-evil-operators t)
@@ -14,7 +16,6 @@
   (which-key-mode))
 
 (use-package general
-  :ensure
   :config
   (general-override-mode 1)
 

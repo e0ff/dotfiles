@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (add-to-list 'default-frame-alist '(fullscreen . maximized))
 
 (cond
@@ -9,7 +11,6 @@
   (add-to-list 'default-frame-alist '(font . "Consolas-14"))))
 
 (use-package doom-themes
-  :ensure
   :config
   (setq doom-themes-enable-bold t
         doom-themes-enable-italic t)
@@ -21,19 +22,17 @@
 ;; (load-theme 'undistinguished t)
 
 (use-package doom-modeline
-  :ensure
   :init
   (setq doom-modeline-modal-icon nil)
   (setq doom-modeline-major-mode-icon nil)
   (doom-modeline-mode 1))
 
 (use-package nyan-mode
-  :ensure
   :config
   (nyan-mode 1))
 
 (setq display-buffer-alist
-      '(("\\*\\(Backtrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\|Gofmt Errors\\)\\*"
+      '(("\\*\\(Backtrace\\|Warnings\\|Compile-Log\\|[Hh]elp\\|Messages\\|Gofmt Errors\\|compilation\\)\\*"
          (display-buffer-in-side-window)
          (window-height . 0.25)
          (side . bottom)

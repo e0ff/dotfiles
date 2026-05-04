@@ -22,6 +22,5 @@
   (add-to-list 'eglot-server-programs '(csharp-mode . ("csharp-ls"))))
 
 (use-package mason
-  :ensure t
   :config
   (mason-setup))

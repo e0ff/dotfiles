@@ -1,7 +1,6 @@
 ;;; ui/persp-mode/config.el -*- lexical-binding: t; -*-
 
 (use-package persp-mode
-  :ensure
   :general
   (leader-def
     :states 'normal

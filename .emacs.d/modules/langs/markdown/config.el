@@ -1,7 +1,6 @@
 ;;; langs/markdown/config.el -*- lexical-binding: t; -*-
 
 (use-package markdown-mode
-  :ensure
   :commands markdown-mode
   :mode ("\\.\\(md\\|markdown\\)\\'" . markdown-mode)
   :config

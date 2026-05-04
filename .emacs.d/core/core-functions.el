@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (defun core/load-directory (dir)
   "`load' all elisp libraries in directory DIR and its subdirectories."
   (interactive "D")

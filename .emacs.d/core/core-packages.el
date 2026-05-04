@@ -1,23 +1,21 @@
-;;; core-packages.el --- description -*- lexical-binding: t; -*-
+;;; core-packages.el -*- lexical-binding: t; -*-
 
 (require 'core-variables)
 
 (use-package ivy
-  :ensure
   :config
   (setq ivy-use-virtual-buffers t)
   (setq ivy-count-format "(%d/%d) ")
   (ivy-mode))
 
-(use-package counsel
-  :ensure)
+(use-package counsel)
 
 (use-package immortal-scratch
-  :ensure
   :config
   (immortal-scratch-mode))
 
 (use-package ibuffer
+  :ensure nil
   :bind
   ("C-x C-b" . ibuffer-other-window)
   :config
@@ -42,31 +40,29 @@
                               (name . "^\\*Help\\*$"))))))))
 
 (use-package ws-butler
-  :ensure
   :diminish ws-butler-mode
   :config
   (add-hook 'prog-mode-hook 'ws-butler-mode))
 
 (use-package editorconfig
-  :ensure
+  :ensure nil
   :diminish editorconfig-mode
   :config
   (editorconfig-mode 1))
 
 (use-package rainbow-delimiters
-  :ensure
   :commands rainbow-delimiters-mode
   :init
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 (use-package yasnippet
-  :ensure
   :diminish yas-minor-mode
   :config
   (setq yas-snippet-dirs (list (concat core/etc-dir "snippets")))
   (yas-global-mode 1))
 
 (use-package eldoc
+  :ensure nil
   :diminish eldoc-mode
   :commands eldoc-mode
   :general
@@ -77,6 +73,7 @@
   (add-hook 'prog-mode-hook 'eldoc-mode))
 
 (use-package autoinsert
+  :ensure nil
   :config
   (add-hook 'find-file-hook 'auto-insert)
   (setq auto-insert 'other
@@ -88,7 +85,7 @@
                             ("^.*php.*$" . "template.php"))))
 
 (use-package flycheck
-  :ensure
+  :ensure nil
   :commands flycheck-mode
   :general
   (leader-def
@@ -99,7 +96,6 @@
   (setq-default flycheck-disabled-checkers '(emacs-lisp-checkdoc)))
 
 (use-package flycheck-pos-tip
-  :ensure
   :after flycheck
   :config
   (setq flycheck-pos-tip-timeout 30)
@@ -107,6 +103,7 @@
 
 (when (executable-find "aspell")
   (use-package flyspell
+    :ensure nil
     :config
     (evil-define-key '(normal visual) 'flyspell-mode-map (kbd "z=") 'flyspell-correct-at-point)
     (add-hook 'org-mode-hook 'flyspell-mode)
@@ -114,7 +111,6 @@
     (add-hook 'text-mode-hook 'flyspell-mode)))
 
 (use-package comment-tags
-  :ensure
   :init
   (setq comment-tags-keymap-prefix (kbd "C-c t"))
   :config
@@ -133,7 +129,6 @@
   (add-hook 'prog-mode-hook 'comment-tags-mode))
 
 (use-package company
-  :ensure
   :diminish company-mode
   :bind (:map company-active-map
               ("<tab>" . company-complete-common-or-cycle)
@@ -153,6 +148,7 @@
            company-yasnippet))))
 
 (use-package org
+  :ensure nil
   :config
   (setq org-directory "~/docs/org/"
         org-default-notes-file "~/docs/org/notes.org"
@@ -160,8 +156,7 @@
         org-log-done t
         org-startup-indented t))
 
-(use-package ox-reveal
-  :ensure)
+(use-package ox-reveal)
 
 (when (memq window-system '(mac ns x))
   (use-package exec-path-from-shell
@@ -169,7 +164,6 @@
     (exec-path-from-shell-initialize)))
 
 (use-package expand-region
-  :ensure
   :bind
   (("C-=" . er/expand-region)))
 

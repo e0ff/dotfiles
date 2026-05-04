@@ -1,10 +1,8 @@
 ;;; lang/csharp/config.el -*- lexical-binding: t; -*-
 
-(use-package csproj-mode
-  :ensure)
+(use-package csproj-mode)
 
 (use-package sharper
-  :ensure
   :general
   (local-leader-def
     :states 'normal

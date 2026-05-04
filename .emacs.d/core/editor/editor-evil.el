@@ -1,5 +1,6 @@
+;; -*- lexical-binding: t; -*-
+
 (use-package evil
-  :ensure
   :demand
   :init
   (setq evil-want-integration t)
@@ -32,7 +33,6 @@
   (evil-mode 1))
 
 (use-package evil-collection
-  :ensure
   :after evil
   :demand
   :config
@@ -40,43 +40,37 @@
   (evil-collection-init))
 
 (use-package evil-surround
-  :ensure
   :config
   (global-evil-surround-mode 1))
 
 (use-package evil-visualstar
-  :ensure
   :config
   (global-evil-visualstar-mode t))
 
 (use-package evil-commentary
-  :ensure
   :diminish evil-commentary-mode
   :config
   (add-hook 'prog-mode-hook 'evil-commentary-mode))
 
 (use-package evil-smartparens
   :after smartparens
-  :ensure
   :diminish evil-smartparens-mode
   :config
   (add-hook 'smartparens-mode-hook 'evil-smartparens-mode))
 
 (unless (display-graphic-p)
+  (xterm-mouse-mode)
   (use-package evil-terminal-cursor-changer
-    :ensure
     :config
     (evil-terminal-cursor-changer-activate)))
 
 (use-package evil-snipe
-  :ensure
   :config
   (add-hook 'magit-mode-hook 'turn-off-evil-snipe-override-mode)
   (evil-snipe-mode +1)
   (evil-snipe-override-mode +1))
 
 (use-package evil-goggles
-  :ensure
   :config
   (setq evil-goggles-pulse nil
   		evil-goggles-async-duration 0.1
@@ -86,7 +80,6 @@
     (evil-goggles-use-magit-faces)))
 
 (use-package undo-tree
-  :ensure
   :diminish undo-tree-mode
   :config
   (setq undo-tree-visualizer-timestamps t)

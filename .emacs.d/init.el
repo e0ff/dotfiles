@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (when (version< emacs-version "30.1")
   (error (concat "This config requires Emacs 30.1+. Current version: " emacs-version)))
 
@@ -19,7 +21,6 @@
 
 (setq find-file-visit-truename nil)
 
-(setq straight-use-package-by-default t)
 (straight-use-package 'use-package)
 (straight-use-package 'diminish)
 (straight-use-package 'project)
@@ -31,6 +32,9 @@
 (eval-when-compile
   (require 'use-package))
 (require 'diminish)
+
+(setq straight-use-package-by-default t)
+(setq use-package-always-ensure t)
 
 (require 'bootstrap)
 

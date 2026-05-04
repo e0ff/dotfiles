@@ -1,7 +1,6 @@
 ;;; web.el -*- lexical-binding: t; -*-
 
 (use-package rainbow-mode
-  :ensure
   :diminish rainbow-mode
   :commands rainbow-mode
   :init
@@ -9,14 +8,12 @@
   (add-hook 'css-mode-hook 'rainbow-mode))
 
 (use-package emmet-mode
-  :ensure
   :commands emmet-mode
   :diminish emmet-mode
   :init
   (add-hook 'web-mode-hook 'emmet-mode))
 
 (use-package web-mode
-  :ensure
   :commands web-mode
   :mode (("\\.html?\\'" . web-mode)
          ("\\.php?\\'" . web-mode)

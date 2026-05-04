@@ -17,18 +17,15 @@
         ("<f5>" . python-f5)))
 
 (use-package anaconda-mode
-  :ensure
   :config
   (add-hook 'python-mode-hook 'anaconda-mode))
 
 (use-package poetry
-  :ensure t
   :config
   (setq poetry-tracking-strategy 'switch-buffer)
   (add-hook 'python-mode-hook 'poetry-tracking-mode))
 
 (use-package virtualenvwrapper
-  :ensure
   :general
   (local-leader-def
     :states 'normal
@@ -41,14 +38,12 @@
   (venv-initialize-eshell))
 
 (use-package blacken
-  :ensure
   :init
   (setq blacken-only-if-project-is-blackened t)
   :config
   (add-hook 'python-mode-hook 'blacken-mode))
 
 (use-package py-isort
-  :ensure
   :general
   (local-leader-def
     :states 'normal
@@ -59,5 +54,4 @@
   :config
   (add-hook 'before-save-hook 'py-isort-before-save))
 
-(use-package pip-requirements
-  :ensure)
+(use-package pip-requirements)

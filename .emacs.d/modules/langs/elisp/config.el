@@ -1,7 +1,6 @@
 ;;; langs/elisp/config.el -*- lexical-binding: t; -*-
 
 (use-package elisp-def
-  :ensure
   :general
   (general-nmap
    :keymaps 'elisp-def-mode-map

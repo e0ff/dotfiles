@@ -1,7 +1,6 @@
 ;;; langs/go/config.el -*- lexical-binding: t; -*-
 
 (use-package go-mode
-  :ensure
   :mode ("\\.go\\'" . go-mode)
   :commands go-mode
   :config

@@ -1,3 +1,5 @@
+;; -*- lexical-binding: t; -*-
+
 (defconst IS-LINUX   (eq system-type 'gnu/linux))
 (defconst IS-WINDOWS (memq system-type '(cygwin windows-nt ms-dos)))
 (defconst IS-MAC (eq system-type 'darwin))
