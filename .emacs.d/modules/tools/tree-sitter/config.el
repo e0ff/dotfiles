@@ -6,5 +6,5 @@
   :custom
   (treesit-auto-install 'prompt)
   :config
-  (setq treesit-auto-langs '(c cpp gitcommit sql python go gomod html css javascript typescript json rust markdown typst))
+  (setq treesit-auto-langs '(c cpp cmake gitcommit sql python go gomod html css javascript typescript json rust markdown typst))
   (global-treesit-auto-mode))
