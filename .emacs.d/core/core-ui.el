@@ -25,6 +25,8 @@
   :init
   (setq doom-modeline-modal-icon nil)
   (setq doom-modeline-major-mode-icon nil)
+  (setopt doom-modeline-buffer-state-icon nil)
+  (setopt doom-modeline-vcs-icon nil)
   (doom-modeline-mode 1))
 
 (use-package nyan-mode

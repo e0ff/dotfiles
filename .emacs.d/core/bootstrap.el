@@ -21,6 +21,7 @@
 
 (setq ring-bell-function 'ignore
       inhibit-startup-message t
+      inhibit-startup-echo-area-message t
       initial-scratch-message nil
       auto-save-default nil
       make-backup-files t
