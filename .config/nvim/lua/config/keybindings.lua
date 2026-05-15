@@ -73,6 +73,7 @@ map('n', '<leader>oq', ':copen<cr>', { silent = true })
 map('n', '<leader>ts', ':set spell!<cr>')
 map('n', '<leader>tl', ':set list!<cr>')
 map('n', '<leader>to', ':OverseerToggle!<cr>')
+map('n', '<leader>tw', ':set list!<cr>')
 
 -- other
 
