@@ -16,10 +16,6 @@
   (:map python-mode-map
         ("<f5>" . python-f5)))
 
-(use-package anaconda-mode
-  :config
-  (add-hook 'python-mode-hook 'anaconda-mode))
-
 (use-package poetry
   :config
   (setq poetry-tracking-strategy 'switch-buffer)
@@ -29,29 +25,12 @@
   :general
   (local-leader-def
     :states 'normal
-    :keymaps 'anaconda-mode-map
+    :keymaps 'python-mode-map
 	"v" '(:ignore t :which-key "virtualenv")
     "va" 'venv-workon
     "vd" 'venv-deactivate)
   :config
   (venv-initialize-interactive-shells)
   (venv-initialize-eshell))
-
-(use-package blacken
-  :init
-  (setq blacken-only-if-project-is-blackened t)
-  :config
-  (add-hook 'python-mode-hook 'blacken-mode))
-
-(use-package py-isort
-  :general
-  (local-leader-def
-    :states 'normal
-    :keymaps 'python-mode-map
-    "i" '(:ignore t :which-key "imports")
-    "ib" 'py-isort-buffer
-    "ir" 'py-isort-region)
-  :config
-  (add-hook 'before-save-hook 'py-isort-before-save))
 
 (use-package pip-requirements)

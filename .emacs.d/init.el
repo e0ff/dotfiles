@@ -19,15 +19,12 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(setq find-file-visit-truename nil)
-
 (straight-use-package 'use-package)
 (straight-use-package 'diminish)
 (straight-use-package 'project)
 
 (add-to-list 'load-path (concat user-emacs-directory "core/"))
 (add-to-list 'load-path (concat user-emacs-directory "themes/"))
-(add-to-list 'load-path (concat user-emacs-directory "site-lisp/"))
 
 (eval-when-compile
   (require 'use-package))

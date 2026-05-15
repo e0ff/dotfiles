@@ -69,16 +69,21 @@
       gamegrid-user-score-file-directory (concat core/cache-dir "games/")
       recentf-save-file                  (concat core/cache-dir "recentf")
       auto-insert-directory              (concat core/etc-dir "auto-insert")
-      backup-directory-alist             '((".*" . "~/.emacs.d/etc/cache/backups"))
+      backup-directory-alist             '((".*" . "~/.emacs.d/cache/backups"))
       request-storage-directory          (concat core/etc-dir "request")
       save-place-file                    (concat core/cache-dir "places")
       auto-save-list-file-prefix         (concat core/cache-dir "auto-save-list/.saves-")
       project-list-file                  (concat core/cache-dir "projects")
-      bookmark-default-file              (concat core/private-dir "bookmarks"))
+      bookmark-default-file              (concat core/cache-dir "bookmarks")
+      transient-history-file             (concat core/cache-dir "transient.el")
+      tramp-persistency-file-name        (concat core/cache-dir "tramp"))
 
 (setq revert-without-query '(".*"))
 
+(setq help-window-select t)
+(setq kill-do-not-save-duplicates t)
 (setq enable-recursive-minibuffers t)
+(setq read-process-output-max (* 4 1024 1024))
 
 (fset 'yes-or-no-p 'y-or-n-p)
 
@@ -142,22 +147,8 @@
 (defun core/init ()
   (core/load-directory core/modules-dir))
 
-(defun core/load-private-configs ()
-  (if (file-exists-p core/local-file)
-      (progn
-        (message (format "loading: %s" core/local-file))
-        (load core/local-file)))
-
-  (if (file-exists-p core/private-file)
-      (progn
-        (message (format "loading: %s" core/private-file))
-        (load core/private-file)))
-
-  (if (file-exists-p custom-file)
-      (progn
-        (message (format "loading: %s" custom-file))
-        (load custom-file))))
-
-(add-hook 'after-init-hook 'core/load-private-configs) ;; load private configs and the custom file after the init is loaded
+(load (locate-user-emacs-file core/private-file) :no-error :no-message)
+(load (locate-user-emacs-file core/local-file) :no-error :no-message)
+(load (locate-user-emacs-file custom-file) :no-error :no-message)
 
 (provide 'bootstrap)

@@ -9,7 +9,7 @@
   (setq evil-undo-system 'undo-tree)
   :config
   (setq evil-normal-state-cursor '("white" box))
-  (setq evil-insert-state-cursor '("red" bar))
+  (setq evil-insert-state-cursor '("white" bar))
   (setq evil-operator-state-cursor '("red" hollow))
   (setq evil-visual-state-cursor '("purple" box))
   (setq evil-replace-state-cursor '("red" hbar))

@@ -5,13 +5,12 @@
 (defconst IS-MAC (eq system-type 'darwin))
 
 (defconst core/etc-dir (concat user-emacs-directory "etc/"))
-(defconst core/cache-dir (concat core/etc-dir "cache/"))
-(defconst core/private-dir (concat core/etc-dir "private/"))
+(defconst core/cache-dir (concat user-emacs-directory "cache/"))
 
 (defconst core/modules-dir (concat user-emacs-directory "modules/"))
 
-(defconst core/local-file (concat core/private-dir "local.el"))
-(defconst core/private-file (concat core/private-dir "private.el"))
+(defconst core/local-file "local.el")
+(defconst core/private-file "private.el")
 
 (provide 'core-variables)
 ;;; core-variables.el ends here

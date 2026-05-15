@@ -2,5 +2,5 @@
 
 (local-leader-def
   :states 'normal
-  :map 'org-mode-map
+  :keymaps 'org-mode-map
   "e" 'org-export-dispatch)

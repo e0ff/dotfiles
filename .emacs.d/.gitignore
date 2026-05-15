@@ -1,36 +1,26 @@
-#folders
+# packages
 elpa
 straight
-tramp
-.python-environments
-transient
-anaconda-mode
-multisession
-tutorial
-tree-sitter/*
-!tree-sitter/.gitkeep
+
+# cache, history, package configuration
+cache
 eln-cache
 mason
+multisession
+tutorial
+*.sqlite
 
-etc/cache
-etc/private
-etc/url
+tree-sitter/*
+!tree-sitter/.gitkeep
 
-#files
 eshell/history
 eshell/lastdir
 
-vendor/*
-!vendor/.gitkeep
-
-*.elc
+# editor files
 *~
 *.swp
-*.dat
+*.elc
 
-session.*
-
-mu4e-config.el
-projectile-bookmarks.eld
-network-security.data
-forge-database*.sqlite
+# private configuration
+private.el
+local.el
