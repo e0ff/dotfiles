@@ -1,6 +1,13 @@
-.ccls-cache
-.clangd
-
+# editor files
 *~
+\#*#
 *.swp
+
+# mac crap
+
 .DS_Store
+
+# windows crap
+
+Thumbs.db
+ehthumbs.db
