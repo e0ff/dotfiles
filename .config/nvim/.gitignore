@@ -2,3 +2,5 @@ spell
 
 .netrwhist
 *.swp
+
+local.lua
