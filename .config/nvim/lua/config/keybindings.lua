@@ -20,7 +20,6 @@ map('n', '<leader>bp', ':bprevious<cr>', { silent = true })
 
 -- code
 
-map('n', '<leader>cf', ':Format<cr>', { silent = true })
 map('n', '<leader>cx', ':Trouble diagnostics toggle focus=false<cr>', { silent = true })
 map('n', '<leader>cd', ':Neogen<cr>')
 map('n', '<leader>cr', ':OverseerRun<cr>')
@@ -62,6 +61,7 @@ map('n', '<leader>wc', '<C-w>q')
 
 map('n', '<leader>wt', '<C-w>t')
 map('n', '<leader>wx', '<C-w>x')
+map('n', '<leader>w=', '<C-w>=')
 
 -- open
 
