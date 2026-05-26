@@ -2,7 +2,7 @@ vim.pack.add({ 'https://github.com/nvim-lualine/lualine.nvim' })
 
 require('lualine').setup({
     options = {
-        theme = "jellybeans-nvim",
+        theme = "onenord",
         section_separators = "",
         component_separators = "",
     },

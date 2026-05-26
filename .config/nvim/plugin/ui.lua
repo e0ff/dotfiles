@@ -1,6 +1,10 @@
 vim.pack.add({
     'https://github.com/nvim-tree/nvim-web-devicons',
-    'https://github.com/WTFox/jellybeans.nvim'
+    'https://github.com/rmehri01/onenord.nvim',
 })
 
-vim.cmd [[colorscheme jellybeans-hc]]
+require('onenord').setup({
+    styles = {
+        comments = "italic",
+    },
+})
