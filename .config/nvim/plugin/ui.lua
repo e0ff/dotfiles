@@ -11,6 +11,9 @@ require('onenord').setup({
     },
     custom_highlights = {
         ["SpellBad"] = { style = 'undercurl', sp = colors.red },
+        ["SpellCap"] = { style = 'undercurl', sp = colors.green },
+        ["SpellLocal"] = { style = 'undercurl' },
+        ["SpellRare"] = { style = 'undercurl' },
         ["@type"] = { style = 'bold' },
         ["@type.builtin"] = { style = 'bold' },
         ["@keyword.conditional"] = { style = 'italic' },
