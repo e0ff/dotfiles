@@ -22,6 +22,8 @@ SAVEHIST=$HISTSIZE
 
 source ~/.zplug/init.zsh
 
+bindkey -e
+
 zplug "zplug/zplug"
 zplug "zsh-users/zsh-history-substring-search"
 zplug "zsh-users/zsh-completions"

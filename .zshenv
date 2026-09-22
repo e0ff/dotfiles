@@ -1,4 +1,4 @@
-export PATH="$PATH:$HOME/bin/:$HOME/.cargo/bin/:$HOME/.local/bin/:$HOME/.yarn/bin/"
+export PATH="$PATH:$HOME/bin/:$HOME/.cargo/bin/:$HOME/.local/bin/"
 export GPG_TTY=$(tty)
 
 if [[ -d /opt/homebrew/ ]]; then
@@ -11,8 +11,7 @@ export DO_NOT_TRACK=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 if [[ -d "$HOME/.dotnet" ]]; then
-    export DOTNET_ROOT="$HOME/.dotnet"
-    export PATH="$PATH:$HOME/.dotnet:$HOME/.dotnet/tools"
+    export PATH="$PATH:$HOME/.dotnet/tools"
 fi
 
 if [[ -d "$HOME/.local/bin/zig" ]]; then
@@ -25,6 +24,8 @@ export TERMINAL="ghostty"
 
 export ASAN_SYMBOLIZER_PATH="/usr/bin/llvm-symbolizer"
 export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig/:/usr/local/lib64/pkgconfig"
+
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 export LESS_TERMCAP_mb=$'\E[01;31m'
 export LESS_TERMCAP_md=$'\E[01;38;5;74m'
@@ -44,6 +45,10 @@ if type go &> /dev/null; then
     export GOPATH="$HOME/.local/share/go"
     export GOMODCACHE="$HOME/.cache/go/mod"
     export PATH="$PATH:$GOPATH/bin"
+fi
+
+if type composer &> /dev/null; then
+    export PATH="$PATH:$(composer global config bin-dir --absolute --quiet)"
 fi
 
 if type ninja &> /dev/null; then
