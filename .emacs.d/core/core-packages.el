@@ -23,6 +23,7 @@
             (lambda ()
               (ibuffer-auto-mode 1)
               (ibuffer-switch-to-saved-filter-groups "default")))
+  (setq ibuffer-human-readable-size t)
   (setq ibuffer-show-empty-filter-groups nil)
   (setq ibuffer-saved-filter-groups
         (quote (("default"
@@ -101,14 +102,14 @@
   (setq flycheck-pos-tip-timeout 30)
   (flycheck-pos-tip-mode))
 
-(when (executable-find "aspell")
-  (use-package flyspell
-    :ensure nil
-    :config
-    (evil-define-key '(normal visual) 'flyspell-mode-map (kbd "z=") 'flyspell-correct-at-point)
-    (add-hook 'org-mode-hook 'flyspell-mode)
-    (add-hook 'markdown-mode-hook 'flyspell-mode)
-    (add-hook 'text-mode-hook 'flyspell-mode)))
+(use-package flyspell
+  :ensure nil
+  :if (executable-find "aspell")
+  :config
+  (evil-define-key '(normal visual) 'flyspell-mode-map (kbd "z=") 'flyspell-correct-at-point)
+  (add-hook 'org-mode-hook 'flyspell-mode)
+  (add-hook 'markdown-mode-hook 'flyspell-mode)
+  (add-hook 'text-mode-hook 'flyspell-mode))
 
 (use-package comment-tags
   :init

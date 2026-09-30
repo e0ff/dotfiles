@@ -84,8 +84,7 @@
 (setq kill-do-not-save-duplicates t)
 (setq enable-recursive-minibuffers t)
 (setq read-process-output-max (* 4 1024 1024))
-
-(fset 'yes-or-no-p 'y-or-n-p)
+(setq use-short-answers t)
 
 (define-global-minor-mode my-global-display-line-numbers-mode global-display-line-numbers-mode
   (lambda ()
